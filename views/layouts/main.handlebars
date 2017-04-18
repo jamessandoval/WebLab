@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- We need to produce a favicon -->
+    <link rel="icon" href="/images/favicon.png">
+    <title>JamesSandoval.io</title>
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap-datepicker.css" rel="stylesheet">
+    <link href="/css/theme.css" rel="stylesheet">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.3/summernote.css" defer="defer" rel="stylesheet">
+    
+</head>
+
+<body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="/images/jslogo1.png" style="padding-left:5px; position: relative; top:-7px;"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                    <li><a href="/Post">Post</a></li>
+                    {{#if user}}
+                    <li><a href="/user/dashboard">Dashboard</a></li>
+                    <li><a href="/user/addpost">Add a Post</a></li>
+                    {{/if}}
+                    <li><a href="https://github.com/jamessandoval" target="_blank">Github</a></li>
+                    <li><a href="/resume">Resum&egrave;</a></li>
+                    {{#unless user}}
+                    <li><a href="/register">register</a></li>
+                    {{/unless}}
+                    <li><a href="/algos">algorithms</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More
+              <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <!--<li><a href="#">Blog</a></li>-->
+                            <li><a href="#">Resources</a></li>
+                            <li><a href="#">Photography</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li class="dropdown-header">
+                                <h5>Portfolio:</h5></li>
+                            <li><a href="/home">userhome</a></li>
+                            <li><a href="#">Code</a></li>
+                            <li><a href="#">Resume</a></li>
+                            <li role="separator" class="divider"></li>
+                            {{#if user}}
+                            <li><a href="/user/logout">Logout</a></li>
+                            {{else}}
+                            <li><a href="/user/login">Login</a></li>
+                            {{/if}}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-lg-12">
+            {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+            {{/if}} {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+            {{/if}} {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+            {{/if}}
+        </div>
+    </div>
+    <br>
+    <br> {{{body}}}
+    <footer id="cfooter">
+        <div class="row">
+            <div class="col-sm-4" align="center">
+                <br>
+                <h4 style="color:#F9F7F7"></h4>
+                <br>
+                <h4 style="color:#F9F7F7"></h4>
+                <br>
+                <h4 style="color:#F9F7F7"></h4>
+                <br>
+            </div>
+            <div class="col-sm-4" align="center">
+                <br>
+                <h4 style="color:#F9F7F7"></h4>
+                <br>
+                <h4 style="color:#F9F7F7">&copy; James E. Sandoval, LLC 2017</h4>
+                <br>
+                <h4 style="color:#F9F7F7">Powered by Node.js, Express, MongoDB, Bootstrap</h4>
+                <br>
+            </div>
+            <div class="col-sm-4" align="center" style="color:#F9F7F7">
+                <br>
+                <h4 style="color:#F9F7F7"></h4>
+                <br>
+                <h3 style="color:#F9F7F7"></h3>
+                <br>
+                <h4 style="color:#F9F7F7"></h4>
+                <br>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- Bootstrap core JavaScript ================================================== -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" defer="defer"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" defer="defer"></script>
+<script src="/script/bootstrap-datepicker.js" defer="defer"></script>
+<script src="/script/summernote.min.js" defer="defer"></script>
+<script src="/script/custom.js" defer="defer"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/script/ie10-viewport-bug-workaround.js" defer="defer"></script>
+<!-- include summernote css/js-->
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+</html>

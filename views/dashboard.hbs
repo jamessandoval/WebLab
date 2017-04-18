@@ -1,0 +1,163 @@
+<!-- Home Page Goes here -->
+<div id="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h2 id="dashboardHead">Add A Link</h2>
+            <hr>
+            <form>
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" name="linkname" placeholder="Link Name">
+                </div>
+                <div class="form-group">
+                    <label>url:</label>
+                    <input type="text" class="form-control" name="url" placeholder="http://www....">
+                </div>
+                <div class="form-group">
+                    <label>Image Source:</label>
+                    <input type="text" class="form-control" name="imgsrc" placeholder="Image Source URL">
+                    <small class="form-text text-muted">Image must be 150x150 for this to work properly.</small>
+                    <small class="form-text text-muted">Eventually this should be an image upload.</small>
+                </div>
+                <div class="form-group">
+                    <label>Categories:</label>
+                    <select class="form-control input-md" name="category" id="categoryFormList">
+                        {{#each categories}}
+                        <option id='{{_id}}'>{{name}}</option>
+                        {{/each}}
+                        <!-- These Should be Dynamically created -->
+                    </select>
+                    <button type="button" id="newCategory" class="btn btn-xs btn-info" align="right">Add New Category</button>&nbsp;
+                    <button type="button" id="editCategory" class="btn btn-xs btn-warning" align="right">Edit Categories</button>
+                    <br>
+                    <span id="addNewCategory"></span>
+                    <div id='editCategoryBlock'>
+                        <table class='table table-striped table-condensed' style="width:100%">
+                            {{#each categories}}
+                            <tr>
+                                <td class="hidden">{{_id}}</td>
+                                <td class="categoryName">{{name}}</td>
+                                <td>
+                                    <button type='button' class='btn btn-info btn-sm' id='modifyCategory'>Edit</button>
+                                </td>
+                                <td>
+                                    <button type='button' class='btn btn-danger btn-sm' id='removeCategory'>Delete</button>&nbsp;
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </table>
+                        <div style="text-align: center;">
+                            <button type='button' class='btn btn-warning btn-md' id='cancelModifyCategory'>Cancel</button>&nbsp;
+                            <button type='button' class='btn btn-success btn-md' id='cancelModifyCategory'>All Done</button>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <br>
+                        <br>
+                        <button type="button" class="btn btn-success btn-lg" id="addlink">Add the Link</button>
+                    </div>
+            </form>
+            <br>
+            <br>
+            </div>
+        </div>
+    </div>
+
+    {{#eachobj categories links}}
+    <div>{{categories.name}}</div>
+    
+    {{/eachobj}}
+
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <a href="https://us-west-2.console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/environment/dashboard?applicationName=jamessandoval.io&environmentId=e-fws3dy4wyz" target="_blank" class="thumbnail">
+                <img src="https://qualityshepherd.com/wp-content/uploads/2013/02/ec2-150x150.png" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">ec2 instance</h3>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="https://portal.azure.com/#dashboard/private/3cd5bf3c-c0bc-41b4-9545-91bbc648800c" target="_blank" class="thumbnail">
+                <img src="http://www.hostingjournalist.com/wp-content/uploads/microsoft-azure-150x150.jpg" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">Azure</h3>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="https://developer.amazon.com/alexa-skills-kit#Ready%20to%20start%3F" target="_blank" class="thumbnail">
+                <img src="http://stadt-bremerhaven.de/wp-content/uploads/2017/03/amazon_alexa.png" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">Alexa Dev</h3>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="http://getbootstrap.com/" target="_blank" class="thumbnail">
+                <img src="http://www.newthinktank.com/wp-content/uploads/2015/11/Bootstrap-Tutorial.png" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">Bootstrap</h3>
+            </a>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <a href="https://angularjs.org/" target="_blank" class="thumbnail">
+                <img src="https://www.webcodegeeks.com/wp-content/uploads/2014/10/angularjs-logo.jpg" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">Angular</h3>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="https://facebook.github.io/react/" target="_blank" class="thumbnail">
+                <img src="http://davidwells.io/wp-content/uploads/2016/04/React-JS-150x150.png" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">React</h3>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="https://facebook.github.io/react-native/" target="_blank" class="thumbnail">
+                <img src="https://echobind.com/blog/images/betting-on-react-native/jsnative-icon.png" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">React Native</h3>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="http://docs.sequelizejs.com/en/v3/" target="_blank" class="thumbnail">
+                <img src="https://www.programmableweb.com/sites/default/files/styles/article_profile_150x150/public/resource/Sequelize%20Framework.png?itok=7YTQXozH" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">Sequelize</h3>
+            </a>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <a href="https://mochajs.org/" target="_blank" class="thumbnail">
+                <img src="http://rootinfosol.com/sites/default/files/inline-images/MochaJS.jpg" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">Mocha.js</h3>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="https://travis-ci.org/getting_started" target="_blank" class="thumbnail">
+                <img src="http://container-solutions.com/content/uploads/2016/04/travis-150x150.png" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">Travis CL</h3>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="http://tutorialzine.com/2014/09/50-awesome-tools-and-resources-for-web-developers/" target="_blank" class="thumbnail">
+                <img src="http://vironit.com/wp-content/uploads/2016/10/web-development-tools-150x150.png" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">Web Dev Tools</h3>
+            </a>
+        </div>
+        <div class="col-md-2">
+            <a href="https://expressjs.com/" target="_blank" class="thumbnail">
+                <img src="http://t12.deviantart.net/oCzUH-mNX-D5FWkb-gQh9nAntEE=/fit-in/150x150/filters:no_upscale():origin()/pre05/de10/th/pre/f/2017/024/5/6/express_js_framework_by_siliconvalleyinfo-dawnh72.png" alt="150x150" class="img-thumbnail">
+                <h3 class="caption" align="center">Express.js</h3>
+            </a>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

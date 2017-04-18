@@ -1,0 +1,228 @@
+
+body, html {
+    height:100%;
+    width:100%;
+}
+
+/* Custom JS CSS */
+/*navbar background override */
+
+nav.navbar.navbar-inverse.navbar-fixed-top {
+    background: #000000 !important;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #000000, #434343) !important;
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #000000, #434343) !important;
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sp-padding{
+    padding:10px;
+}
+
+.hidden{
+
+    display: none !important;
+}
+
+#editCategoryBlock{
+    display: none;
+}
+
+.logocontainer {
+    height:150px;
+    width:150px;
+    margin-right: auto;
+    margin-left: auto;
+    background: url(/images/newlogomain2.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    position: relative;
+    top:165px;
+    
+}
+
+.theme-dropdown .dropdown-menu {
+    position: static;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.theme-showcase > p > .btn {
+    margin: 5px 0;
+}
+
+.theme-showcase .navbar .container {
+    width: auto;
+}
+
+#map {
+    border: solid #B4B4B4 1px;
+    height: 400px;
+    width: 700px;
+    /*background: url(../images/ajax-loader.gif) transparent no-repeat center center;*/
+}
+
+
+header {
+min-height: 100%;
+}
+
+header{
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-size:cover;
+    -o-background-size:cover;
+    background-position:center;
+    background-image: url("../images/seattleflyby.jpg");
+    color:#ffffff;
+
+}
+header .header-content {
+    padding: 100px 15px;
+}
+
+.header-content-inner{
+    margin-right: auto;
+    margin-left:auto;
+    max-width: 1000px;
+}
+
+.header-content{
+    position:relative;
+    width:100%;
+    text-align:center;
+}
+
+header h1,{
+    color:#ffffff;
+
+}
+
+header hr{
+    height: 2px;
+    border: 0;
+    border-top: 2px solid #ffffff;
+
+}
+
+header mark{
+    color:#4C4C4C;
+    background-color:#FFFFFF; 
+    opacity: .9;
+    font-weight: 500;
+
+}
+
+header mark {
+    color:#4C4C4C;
+    background-color:#FFFFFF; 
+    opacity: .9;
+    font-weight: 500;
+
+}
+
+header .submark{
+    color:#4C4C4C;
+    background-color:#FFFFFF; 
+    opacity: .5;
+    font-weight: 500;
+
+}
+
+
+section{
+    padding: 100px 0;
+}
+
+.bg-about{
+  background-color:#0080FF;
+  margin: 0 auto;
+  width: 100%;
+  height: 50%;
+}
+
+.bg-portfolio{
+  background-color:##FFFFFF;
+  margin: 0 auto;
+  width: 100%;
+  height: 50%;
+}
+
+.bg-intro{
+  background-color:##FFFFFF;
+  margin: 0 auto;
+  width: 100%;
+  height: 50%;
+  background-image: src("../images/seattlesecondary.jpg");
+}
+
+.thumbnailh2 h2 {
+    width: 350px;
+    opacity: 1.0;
+}
+
+.thumbnailh2 {
+    z-index: 100;
+    position: relative;
+    top: 150px;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #000000;
+    text-decoration: none !important;
+}
+
+a:hover h2 {
+    color: #ffffff !important;
+    text-decoration: underline
+}
+
+#bottom-border {
+    border-bottom: 4px solid #ffffff;
+    padding-bottom: 5%;
+    -webkit-box-shadow: 0 4px 5px -5px #333;
+    box-shadow: 0 4px 5px -5px #333;
+}
+
+.list-group {
+    opacity: 0.7 !important;
+    font-weight: bold;
+}
+
+#paperwhite {
+    box-shadow: 3px 3px 3px #999999;
+    margin-top: 17px;
+    margin-left: 12px;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.paperwhite-form {
+	margin-top:20px;
+    padding:20px;
+    border:1px solid #d2d2d2;
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.categoryName{
+
+    width:50%;
+    word-wrap: break-word;
+
+
+}
+
+#cfooter {
+    background: #000000;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #000000, #434343);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #000000, #434343);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 50%;
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}

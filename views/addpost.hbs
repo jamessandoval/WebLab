@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-6" style="align-content: center">
+            <h2 class="page-header">Add Post</h2> {{#if errors}} {{#each errors}}
+            <div class="alert alert-danger">{{msg}}</div>
+            {{/each}} {{/if}}
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-6">
+            <form method="post" action="/addpost">
+                <div class="form-group">
+                    <label>Title:</label>
+                    <input type="text" class="form-control input-lg" placeholder="Title" name="title">
+                </div>
+                <div class="form-group">
+                    <label>State:</label>
+                    <select class="form-control input-lg" name="state">
+                        <option>Draft</option>
+                        <option>Publish</option>
+                        <option>Archive</option>
+                    </select>
+                    <span class="help-block">Maybe you'd like to publish this</span>
+                </div>
+                <div class="form-group">
+                    <label>URL:</label>
+                    <input type="text" class="form-control input-lg" placeholder="URL" name="url">
+                    <span class="help-block">I'm not sure what this is supposed to be.</span>
+                </div>
+                <div class="form-group" id="datepicker">
+                    <label>Date:</label>
+                    <input type="text" class="form-control input-lg" placeholder="mm/dd/yyyy">
+                </div>
+                <label>Brief:</label>
+                <div class="form-group">
+                    <textarea class="form-control input-lg" id="summernote" name="contentbrief"></textarea>
+                    <span class="help-block"><a href="http://codemirror.net/">Consider adding code Mirror.</a>
+                        </span>
+                </div>
+                <label>Content:</label>
+                <div class="form-group">
+                    <textarea class="form-control input-lg" id="summernote2" name="contentsummary"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Categories:</label>
+                    <select class="form-control input-lg" name="category">
+                        <option>Web Development</option>
+                        <option>Software Engineering</option>
+                        <option>Outdoors stuff</option>
+                    </select>
+                    <span class="help-block">Pick a category (dynamically load this stuff.)</span>
+                </div>
+                <hr>
+                <button class="btn btn-default" id="preview">Preview</button>
+                <button type="submit" class="btn btn-success">Submit</button>
+                <br><br>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+        <!-- row class ends -->
+    </div>
+
