@@ -10,6 +10,7 @@ $('#datepicker input').datepicker({
 });
 
 
+
 // for the wysiwig editor
 $(document).ready(function() {
     $('#summernote').summernote({
@@ -23,6 +24,9 @@ $(document).ready(function() {
         minheight: null,
         focus: true
     });
+
+    $('#dashboardform').hide();
+
 });
 
 // smooth scrolling function when the link is in the web page
@@ -40,6 +44,19 @@ $(function() {
         }
     });
 });
+
+$('#showLinkForm').click(function() {
+
+    $('#dashboardform').show();
+
+});
+
+$('#hideLinkForm').click(function() {
+
+    $('#dashboardform').hide();
+
+});
+
 // 
 // Add New Link
 //  

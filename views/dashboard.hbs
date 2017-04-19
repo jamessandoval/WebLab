@@ -3,9 +3,13 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <h2 id="dashboardHead">Add A Link</h2>
+            <h1 id="dashboardHead"> <span class="glyphicon glyphicon-picture"></span> Links</h1>
             <hr>
-            <form>
+            <button type="button" id="showLinkForm" class="btn btn-success btn-sm">show link form</button>
+            
+            <button type="button" id="hideLinkForm" class="btn btn-info btn-sm">Hide it</button>
+
+            <form id="dashboardform">
                 <div class="form-group">
                     <label>Name:</label>
                     <input type="text" class="form-control" name="linkname" placeholder="Link Name">
@@ -64,11 +68,9 @@
         </div>
     </div>
         
-        {{#eachobj categories links}}
-     
-         {{/eachobj}}
-        
-     
+   {{#eachobj categories links}}
+   {{/eachobj}}
+
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-2">
