@@ -82,12 +82,16 @@ router.get('/logout', function(req, res) {
 
 router.post('/addlink', ensureAuthenticated, function(req, res) {
 
-    console.log("before create link.");
-
     var name = req.body.linkname,
         url = req.body.url,
         imgsrc = req.body.imgsrc,
         category = req.body.category;
+
+    if(name === '' || url === '' || imgsrc === '' || category == '') {
+        console.log("null values entered. Check Yourself. Nothing is created. ");
+        res.redirect('/user/dashboard');
+        return;
+    }
 
     var newLink = new Link({
         linkname: name,
@@ -163,7 +167,14 @@ router.put('/deletecategory', ensureAuthenticated, function(req, res) {
 
 
 router.get('/addpost', ensureAuthenticated, function(req, res) {
-    res.render('addpost');
+    Category.find({}, function(err, categories) {
+        Link.find({}, function(err, links) {
+            res.render('addpost', {
+                categories: categories,
+                links: links
+            });
+        })
+    });
 });
 
 router.post('/addpost', ensureAuthenticated, function(req, res) {

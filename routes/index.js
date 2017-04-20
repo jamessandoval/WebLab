@@ -3,13 +3,22 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Page = require('../models/page.js');
 var user = require('../models/user.js');
+var Category = require('../models/category');
+var Link = require('../models/link');
 
 router.get('/', function(req, res) {
     res.render('home');
 });
 
 router.get('/blog', function(req, res) {
-    res.render('blog');
+	Category.find({}, function(err, categories) {
+        Link.find({}, function(err, links) {
+            res.render('blog', {
+                categories: categories,
+                links: links
+            });
+        })
+    });
 });
 
 router.get('/algos', function(req, res) {

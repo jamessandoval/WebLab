@@ -17,13 +17,17 @@ function hbsHelpers(hbs) {
 
                 return foo + bar;
             },
+
+            // The method to use this helper is: {{#section 'jquery'}} ...jquery goes here  {{/section}}
             section: function(name, options) {
                 if (!this._sections) this._sections = {};
                 this._sections[name] = options.fn(this);
                 return null;
             },
+
+
             eachobj: function(items, bars, options) {
-                
+
                 var out = "<hr><div class='row'>"
                 for (var i = 0, l = items.length; i < l; i++) {
 
@@ -32,11 +36,10 @@ function hbsHelpers(hbs) {
                     for (var k = 0, m = bars.length; k < m; k++) {
                         if (items[i].name === bars[k].category) {
 
-                                if(counter === 0){
-                                    var out = out + "<div class='col-md-12' align='center'><h2>" + items[i].name + "</h2></div>";
-                                    
-                                }
+                            if (counter === 0) {
+                                var out = out + "<div class='col-md-12' align='center'><h2>" + items[i].name + "</h2></div>";
 
+                            }
                             counter++;
 
                             if (counter === 1) {
