@@ -131,7 +131,7 @@ section{
   background-color:#FFFFFF;
   margin: 0 auto;
   width: 100%;
-  height: 45%;
+  height: 50%;
 
 }
 
@@ -155,14 +155,14 @@ background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, F
   background-color:#FFFFFF;
   margin: 0 auto;
   width: 100%;
-  height: 55%;
+  height: 50%;
   -webkit-background-size:cover;
     -moz-background-size:cover;
     background-size:cover;
     -o-background-size:cover;
     background-position:center;
   background-image: url("../images/seattlesecondary.jpg");
-  border-bottom:2px solid #333333;
+  border-bottom:2px solid #333333 !important; 
 }
 
 .thumbnailh2 h2 {
