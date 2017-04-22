@@ -6,6 +6,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user');
 var Category = require('../models/category');
 var Link = require('../models/link');
+var Post = require('../models/post');
 
 router.get('/login', function(req, res) {
     res.render('login');
@@ -175,10 +176,13 @@ router.get('/addpost', ensureAuthenticated, function(req, res) {
             });
         })
     });
+
 });
 
 router.post('/addpost', ensureAuthenticated, function(req, res) {
-    var page = new Page({
+
+
+    var newPost = new Post({
         title: req.body.title,
         state: req.body.state,
         url: req.body.url,
@@ -188,14 +192,12 @@ router.post('/addpost', ensureAuthenticated, function(req, res) {
         category: req.body.category,
     });
 
-    page.save(function(err) {
-        if (!err) {
-            console.log("Page Has Been Saved.");
-            return res.send(200, page);
+    console.log("It\'s me");
 
-        } else {
-            return res.send(500, err);
-        }
+    Post.createPost(newPost, function(err, post) {
+        if (err) throw err;
+        console.log("post has been created.");
+        res.redirect('/blog');
     });
 });
 

@@ -48,6 +48,7 @@ function hbsHelpers(hbs) {
                             out = out + "<div class='col-md-2' id='" + bars[k]._id + "'><a href='" + bars[k].url + "'  target='_blank' class='thumbnail'><img src='" + bars[k].imgsrc + "' alt='150x150' class='img-thumbnail'><h3 class='caption' align='center'>" + bars[k].linkname + "</h3></a></div>";
                             if (counter === 4) {
                                 out = out + "<div class='col-md-2'></div>";
+                                
                             }
                         }
                     }

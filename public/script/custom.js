@@ -69,7 +69,8 @@ $('form').on('click', '#addlink', function() {
         data: $("form").serialize(),
         success: function(response) {
 
-            console.log("Link has been added.");
+           // Simply reload the page after success. 
+           location.reload();
 
         },
         error: function(jqXHR, exception) {
