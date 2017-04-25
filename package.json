@@ -28,6 +28,7 @@
     "express-messages": "^1.0.1",
     "express-session": "^1.15.1",
     "express-validator": "^3.1.2",
+    "handlebars-dateformat": "^1.0.1",
     "jquery": "^3.1.0",
     "mongodb": "^2.2.25",
     "mongoose": "^4.9.1",

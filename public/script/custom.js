@@ -29,6 +29,16 @@ $(document).ready(function() {
 
 });
 
+function slugify(text) {
+
+    return text.toString().toLowerCase()
+        .replace(/\s+/g, '-') // Replace spaces with -
+        .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+        .replace(/\-\-+/g, '-') // Replace multiple - with single -
+        .replace(/^-+/, '') // Trim - from start of text
+        .replace(/-+$/, ''); // Trim - from end of text
+}
+
 // smooth scrolling function when the link is in the web page
 $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
@@ -69,8 +79,8 @@ $('form').on('click', '#addlink', function() {
         data: $("form").serialize(),
         success: function(response) {
 
-           // Simply reload the page after success. 
-           location.reload();
+            // Simply reload the page after success. 
+            location.reload();
 
         },
         error: function(jqXHR, exception) {

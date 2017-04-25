@@ -4,8 +4,12 @@ body, html {
     width:100%;
 }
 
-/* Custom JS CSS */
 /*navbar background override */
+.navbar {
+
+   /* background-color: #004080; */
+
+}
 
 
 .sp-padding{
@@ -63,7 +67,7 @@ header{
     background-position:center;
     background-image: url("../images/seattleflyby.jpg");
     min-height: 100%;
-    top:-25px;
+    top:-35px;
     position: relative;
      color:#FF6666;
      
@@ -73,10 +77,9 @@ header{
 }
 
 .navbar {
-    border-bottom:2px solid #E6E6E6;
+   /* border-bottom:2px solid #E6E6E6; */
 
 }
-
 
 header .header-content {
     padding: 110px;
@@ -103,8 +106,8 @@ header h1,{
 
 header hr{
     height: 2px;
-    border: 0;
-    border-top: 2px solid #ffffff;
+    /* border: 0; */
+    /* border-top: 2px solid #ffffff; */
 
 }
 
@@ -146,16 +149,15 @@ section{
 }
 
 .bg-portfolio{
-background: #56CCF2;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #2F80ED, #56CCF2);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ background-color:#66CCFF;
   margin: 0 auto;
   width: 100%;
   height: 50%;
 }
 
 .bg-contact{
-  background-color:#66CCFF;
+  background-color:#004080;
+  color:#CCCCCC;
   margin: 0 auto;
   width: 100%;
   height: 50%;
@@ -189,11 +191,6 @@ background: linear-gradient(to right, #2F80ED, #56CCF2); /* W3C, IE 10+/ Edge, F
     text-decoration: none !important;
 }
 
-a:hover h2 {
-    color: #ffffff !important;
-    text-decoration: underline
-}
-
 #blogheading{
     -webkit-background-size:cover;
     -moz-background-size:cover;
@@ -204,6 +201,17 @@ a:hover h2 {
 
 }
 
+.blog-post-heading a:hover a:focus{
+
+    color:#333333;
+
+}
+
+.blog-post-heading a {
+
+    color:#333333;
+
+}
 
 
 .list-group {
@@ -236,8 +244,8 @@ a:hover h2 {
 }
 
 #cfooter {
-    background: #004080;
-
+    background-color: rgb(34, 34, 34);
+    border-color: rgb(8, 8, 8);
     margin: 0 auto;
     width: 100%;
     height: 50%;

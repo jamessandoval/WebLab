@@ -27,7 +27,6 @@ mongoose.connect('mongodb://localhost/loginapp');
 var db = mongoose.connection;
 app.engine('hbs', hbs.engine,exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'hbs');
-
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }));

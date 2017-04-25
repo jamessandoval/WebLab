@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Page = require('../models/post.js');
+var Post = require('../models/post.js');
 var user = require('../models/user.js');
 var Category = require('../models/category');
 var Link = require('../models/link');
@@ -11,13 +11,17 @@ router.get('/', function(req, res) {
 });
 
 router.get('/blog', function(req, res) {
-	Category.find({}, function(err, categories) {
+    Category.find({}, function(err, categories) {
         Link.find({}, function(err, links) {
-            res.render('blog', {
-                categories: categories,
-                links: links
+            Post.find({ state: 'Publish' }, function(err, posts) {
+                res.render('blog', {
+                    posts: posts,
+                    categories: categories,
+                    links: links
+                });
+                //console.log(posts);
             });
-        })
+        });
     });
 });
 
@@ -33,9 +37,27 @@ router.get('/register', function(req, res) {
     res.render('register');
 });
 
-router.get('/post', function(req, res) {
-    res.render('post');
+router.get('/post/:id', function(req, res) {
+
+    var id = req.params.id;
+
+    console.log(id);
+
+    Post.findById(id, function(err, posts) {
+        if (err) {
+            next(err);
+        } else if (posts) {
+            res.render('post', {
+                posts:posts
+            });
+        }
+        //else {
+        //
+        // next(new Error("Failed to bind post"));
+        //   }
+    });
 });
+
 
 
 module.exports = router;

@@ -1,67 +1,45 @@
 <!-- Home Page Goes here -->
 <div class="container container-fixed">
-<div class="jumbotron" id="blogheading">
-  <h1 >Hi...</h1>
-  <p class="lead"><b>Welcome to my blog.</b></p>
-  <br><br><br>
-</div>
-<hr>
+    <div class="jumbotron" id="blogheading">
+        <h1>Hi...</h1>
+        <p class="lead"><b>Welcome to my blog.</b></p>
+        <br>
+        <br>
+        <br>
+    </div>
+    <hr>
     <div class="row">
+        {{#each posts}}
         <!-- main body content -->
-        <div class="col-md-9" style="background-color: #ffffff; padding:20px;">
-            <div class="media">
-            <h2 class="media-heading pull-left">A New Outlook<small>&nbsp;&nbsp;By James Sandoval</small></h2><br><br><hr style="padding:0px; margin:0px 0px 0px 0px; opacity:0.5">
-                <div class="media-left">
-                    <a href="#">
-                        <img class="media-object" src="https://placehold.it/150x150" alt="150x150">
-                    </a>
+        <div class="col-md-7 col-md-offset-1" style="background-color: #ffffff; padding:20px;">
+            
+                <div class="media">
+                    <!-- // {{dateFormat now "dddd, MMMM Do YYYY, h:mm:ss a"}} -->
+                    <a href="/post/{{_id}}" align="right"><h2 class="media-heading pull-left blog-post-heading">{{title}}<small>&nbsp;&nbsp;by James Sandoval on {{dateFormat date "Do MMMM YYYY"}}</small></h2></a>
+                    <br>
+                    <br>
+                    <hr style="padding:0px; margin:0px 0px 0px 0px; opacity:0.5">
+                    <div class="media-left">
+                        <a href="/post/{{_id}}" align="right"><img class="media-object" src="https://placehold.it/100x100" alt="150x150"></a>
+                    </div>
+                    <div class="media-body" style="text-align: left;">
+                        {{{contentbrief}}} <a href="/post/{{_id}}" align="right"><h4><b>Read More.</b></h4></a>
+                    </div>
                 </div>
-                <div class="media-body" style="text-align: left;">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <!-- new blog object -->
-            <hr>
-            <div class="media">
-            <h2 class="media-heading pull-left">A New Outlook<small>&nbsp;&nbsp;By James Sandoval</small></h2><br><br><hr style="padding:0px; margin:0px 0px 0px 0px; opacity:0.5">
-                <div class="media-left">
-                    <a href="#">
-                        <img class="media-object" src="https://placehold.it/150x150" alt="150x150">
-                    </a>
-                </div>
-                <div class="media-body" style="text-align: left;">        
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                </div>
-            </div>
-            <hr>
-            <!-- new blog object -->
-            <div class="media">
-            <h2 class="media-heading pull-left">A New Outlook<small>&nbsp;&nbsp;By James Sandoval</small></h2><br><br><hr style="padding:0px; margin:0px 0px 0px 0px; opacity:0.5">
-                <div class="media-left">
-                    <a href="#">
-                        <img class="media-object" src="https://placehold.it/150x150" alt="150x150">
-                    </a>
-                </div>
-                <div class="media-body" style="text-align: left;">
-                    
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <span class="help-block"></span>
-                </div>
-            </div>
+                <hr>
+            {{/each}}
+            <!--{{#if user}}<a href="/edit/{{_id}}"><h4>Edit Post</h4></a>{{/if}}-->
         </div>
         <!-- next object -->
-        <div class="col-md-3" style="background-color: #ffffff; padding:20px;">
+        <div class="col-md-3 " style="background-color: #ffffff; padding:20px;">
             <!-- Right Column goes here -->
             <div style=" position: relative; top:0px; ">
-                <h3>Categories:</h3>
-                {{#each categories}}
+                <h3>Categories:</h3> {{#each categories}}
                 <ul class="list-group ">
                     <li class="list-group-item ">{{name}}</li>
-                {{/each}}
+                    {{/each}}
                 </ul>
             </div>
         </div>
-        
     </div>
 </div>
-
