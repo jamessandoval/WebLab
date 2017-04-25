@@ -72,7 +72,6 @@ router.get('/dashboard', ensureAuthenticated, function(req, res) {
     });
 });
 
-
 router.get('/logout', function(req, res) {
     req.logout();
 
@@ -88,7 +87,7 @@ router.post('/addlink', ensureAuthenticated, function(req, res) {
         imgsrc = req.body.imgsrc,
         category = req.body.category;
 
-    if(name === '' || url === '' || imgsrc === '' || category == '') {
+    if (name === '' || url === '' || imgsrc === '' || category == '') {
         console.log("null values entered. Check Yourself. Nothing is created. ");
         res.redirect('/user/dashboard');
         return;
@@ -140,11 +139,9 @@ router.post('/addcategory', ensureAuthenticated, function(req, res) {
 router.put('/updatecategory', ensureAuthenticated, function(req, res) {
 
     Category.findById(req.body.id, function(err, category) {
-
         if (err) return res.send(500, { error: err });
         category.name = req.body.name;
         category.save(function(err, category) {
-
             if (err) return res.send(500, { error: err });
             console.log("Successfully Updated...for real this time.")
             res.send(category);
@@ -180,8 +177,6 @@ router.get('/addpost', ensureAuthenticated, function(req, res) {
 });
 
 router.post('/addpost', ensureAuthenticated, function(req, res) {
-
-
     var newPost = new Post({
         title: req.body.title,
         state: req.body.state,
@@ -189,11 +184,10 @@ router.post('/addpost', ensureAuthenticated, function(req, res) {
         date: req.body.date,
         contentbrief: req.body.contentbrief,
         contentsummary: req.body.contentsummary,
-        category: req.body.category,
+        category: req.body.category
     });
 
     console.log("It\'s me");
-
     Post.createPost(newPost, function(err, post) {
         if (err) throw err;
         console.log("post has been created.");
@@ -201,56 +195,40 @@ router.post('/addpost', ensureAuthenticated, function(req, res) {
     });
 });
 
-router.post('/pages/update', ensureAuthenticated, function(req, res) {
-    var id = req.body._id;
-
-    Page.update({
-        _id: id
-    }, {
-        $set: {
-            title: req.body.title,
-            state: req.body.state,
-            url: req.body.url,
-            date: req.body.date,
-            contentbrief: req.body.contentbrief,
-            contentsummary: req.body.contentsummary,
-            category: req.body.category,
+router.get('/editpost/:id', ensureAuthenticated, function(req, res) {
+    Post.findById(req.params.id, function(err, posts) {
+        if (err) {
+            next(err);
+        } else if (posts) {
+            res.render('edit', {
+                posts: posts
+            });
         }
-    }).exec();
-    res.send("Page updated");
-});
-
-router.get('/pages/delete/:id', ensureAuthenticated, function(req, res) {
-    var id = req.params.id;
-    Page.remove({
-        _id: id
-    }, function(err) {
-        return console.log(err);
-    });
-    return res.send('Page id - ' + id + ' has been deleted');
-});
-
-router.get('/pages/admin-details/:id', ensureAuthenticated, function(req, res) {
-    var id = req.params.id;
-    Page.findOne({
-        _id: id
-    }, function(err, page) {
-        if (err)
-            return console.log(err);
-        return res.send(page);
     });
 });
 
-router.get('/pages/details/:url', ensureAuthenticated, function(req, res) {
-    var url = req.params.url;
-    Page.findOne({
-        url: url
-    }, function(err, page) {
-        if (err)
-            return console.log(err);
-        return res.send(page);
+router.post('/editpost', ensureAuthenticated, function(req, res) {
+    
+    Post.findById(req.body.id, function(err, post) {
+
+        if (err) return res.send(500, { error: err });
+
+            post.title = req.body.title || post.title;
+            post.state = req.body.state || post.state;
+            post.url = req.body.url || post.url;
+            post.contentbrief = req.body.contentbrief || post.contentBrief;
+            post.contentsummary = req.body.contentsummary || post.contentsummary;
+            post.date = req.body.date || post.date;
+            post.category = req.body.category || post.category;
+
+        post.save(function(err, post) {
+            if (err) return res.send(500, { error: err });
+            console.log("Successfully Updated...for real this time.")
+            res.redirect('/post/'+ req.body.id);
+        });
     });
 });
+
 
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {

@@ -1096,8 +1096,8 @@ html {
 body {
   font-family: 'Bitter', serif;
   font-family: 'Muli', sans-serif;
-  font-size: 18px;
-  line-height: 1.42857143;
+  font-size: 20px;
+  line-height: 1.7em;
   color: #333333;
   background-color: #ffffff;
 }

@@ -1,6 +1,11 @@
 // calender for add post page only
 // 
 // 
+// Prevent all default submit button actions
+//$('form').submit(function(event) {
+//    event.preventDefault(); 
+// });
+ 
 $('#datepicker input').datepicker({
     maxViewMode: 3,
     todayBtn: true,
@@ -8,8 +13,6 @@ $('#datepicker input').datepicker({
     autoclose: true,
     todayHighlight: true
 });
-
-
 
 // for the wysiwig editor
 $(document).ready(function() {

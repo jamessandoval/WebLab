@@ -1,19 +1,24 @@
 <div class="container-fluid ">
-    <div class="row" style="padding:20px">
+    <div class="row" style="padding:5px">
         <!-- main body content -->
-        <div class="col-md-8 col-md-offset-2" style="background-color: #ffffff; padding:20px; border:1px sold black">
+        <div class="col-md-8 col-md-offset-2" style="background-color: #ffffff; padding:5px; border:1px sold black">
             <div class="text-left">
-                <a class="text-muted" href="/blog"><span class="glyphicon glyphicon-arrow-left"></span>back</a> {{#posts}}
-                <h1>{{title}}</h1>
+            <!-- may have to make custom helper -->
+                <a class="text-muted" href="/blog"><span class="glyphicon glyphicon-arrow-left"></span> back</a> {{#posts}}
+
+                <hr>
             </div>
             <div class="media-center">
-                <img class="media-object img-responsive" src="https://placehold.it/900x300" alt="900x300">
-                <p class="text-left text-muted" style="padding=5px">Posted on {{date}} by James Sandoval</p>
-                <hr>
+                <img class="media-object img-responsive" src="/images/webdevelopment900x300.jpg" alt="900x300">
+                <br>
+                 <h1><b>{{title}}</b></h1>
+                 {{#if ../user}}<a href="/user/editpost/{{_id}}">  <h4><b>Edit Post</b></h4></a> {{/if}}
+                 <hr>
+                <p class="text-muted" ><small style="float:left; font-size: 12px;">Category: <b>{{category}}</b></small><small style="float: right; font-size: 12px;">Posted on {{dateFormat date "Do MMMM YYYY"}} by James Sandoval</small></p>
+                <br>
+               
                 <div class="text-left">
                     {{{contentbrief}}}
-                </div>
-                <div class="text-left">
                     {{{contentsummary}}}
                 </div>
             </div>

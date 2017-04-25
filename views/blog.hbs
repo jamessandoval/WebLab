@@ -4,42 +4,30 @@
         <h1>Hi...</h1>
         <p class="lead"><b>Welcome to my blog.</b></p>
         <br>
-        <br>
-        <br>
     </div>
-    <hr>
     <div class="row">
         {{#each posts}}
         <!-- main body content -->
-        <div class="col-md-7 col-md-offset-1" style="background-color: #ffffff; padding:20px;">
-            
-                <div class="media">
-                    <!-- // {{dateFormat now "dddd, MMMM Do YYYY, h:mm:ss a"}} -->
-                    <a href="/post/{{_id}}" align="right"><h2 class="media-heading pull-left blog-post-heading">{{title}}<small>&nbsp;&nbsp;by James Sandoval on {{dateFormat date "Do MMMM YYYY"}}</small></h2></a>
-                    <br>
-                    <br>
-                    <hr style="padding:0px; margin:0px 0px 0px 0px; opacity:0.5">
-                    <div class="media-left">
-                        <a href="/post/{{_id}}" align="right"><img class="media-object" src="https://placehold.it/100x100" alt="150x150"></a>
-                    </div>
-                    <div class="media-body" style="text-align: left;">
-                        {{{contentbrief}}} <a href="/post/{{_id}}" align="right"><h4><b>Read More.</b></h4></a>
-                    </div>
-                </div>
+        <div class="col-md-10 col-md-offset-1" style="background-color: #ffffff; padding:20px;">
+            <div class="media">
+                <!-- // {{dateFormat now "dddd, MMMM Do YYYY, h:mm:ss a"}} -->
+                <a href="/post/{{_id}}" align="right"><h1 class="media-heading pull-left blog-post-heading"><b>{{title}}</b></h1></a>
+                <br>
+                {{#if ../user}}<a href="/user/editpost/{{_id}}">  <h4><b>Edit Post</b></h4></a> {{/if}}
                 <hr>
-            {{/each}}
-            <!--{{#if user}}<a href="/edit/{{_id}}"><h4>Edit Post</h4></a>{{/if}}-->
-        </div>
-        <!-- next object -->
-        <div class="col-md-3 " style="background-color: #ffffff; padding:20px;">
-            <!-- Right Column goes here -->
-            <div style=" position: relative; top:0px; ">
-                <h3>Categories:</h3> {{#each categories}}
-                <ul class="list-group ">
-                    <li class="list-group-item ">{{name}}</li>
-                    {{/each}}
-                </ul>
+                <div style="font-size:13px; padding: 0px; margin:0px; position: relative; top:-10px; display: inline;">
+                    <p>Category: <b>{{category}}</b> <span style="float:right; ">{{dateFormat date "dddd, MMMM Do YYYY"}}</span></p>
+                </div>
+                <div class="media-left">
+                    <!--<img class="media-object" src="https://placehold.it/100x100" alt="150x150"></a>
+                    </div>-->
+                </div>
+                <div class="media-body" style="text-align: left;">
+                     {{{contentbrief}}} <a href="/post/{{_id}}" style="float:left"><h5><b>Read More...</b></h5></a>
+                </div>
             </div>
+            <hr> {{/each}}
+           
         </div>
     </div>
 </div>

@@ -7,10 +7,9 @@ body, html {
 /*navbar background override */
 .navbar {
 
-   /* background-color: #004080; */
+/* background-color: #004080; */
 
 }
-
 
 .sp-padding{
     padding:10px;
@@ -69,11 +68,9 @@ header{
     min-height: 100%;
     top:-35px;
     position: relative;
-     color:#FF6666;
-     
+    color:#FF6666;
+    
      /*text-shadow: 2px 2px #333333; */
-
-
 }
 
 .navbar {
@@ -132,9 +129,7 @@ header .submark{
     background-color:#FFFFFF; 
     opacity: .5;
     font-weight: 500;
-
 }
-
 
 section{
     padding: 0px 10px;
