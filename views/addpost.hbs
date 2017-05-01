@@ -23,12 +23,13 @@
                         <option>Publish</option>
                         <option>Archive</option>
                     </select>
-                    <span class="help-block">Maybe you'd like to publish this</span>
+                    <span class="help-block">easily specify who can view</span>
                 </div>
                 <div class="form-group">
                     <label>URL:</label>
-                    <input type="text" class="form-control input-lg" placeholder="URL" name="url">
-                    <span class="help-block">I'm not sure what this is supposed to be.</span>
+                    <input type="text" class="form-control input-lg" placeholder="URL" name="url" readonly>
+                    <span class="help-block">no need to specify here-however, it is part of the model.</span>
+               
                 </div>
                 <div class="form-group" id="datepicker">
                     <label>Date:</label>
@@ -46,8 +47,7 @@
                 </div>
                 <div class="form-group">
                     <label>Categories:</label>
-                   
-                    <select class="form-control input-lg" name="category">
+                    <select class="form-control input-lg" name="category" id="categoryFormList">
                      {{#each categories}}
                         <option>{{name}}</option>
                     {{/each}}

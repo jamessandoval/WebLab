@@ -29,6 +29,7 @@ router.get('/algos', function(req, res) {
     res.render('algos')
 });
 
+
 router.get('/resume', function(req, res) {
     res.render('resume');
 });
@@ -56,6 +57,12 @@ router.get('/post/:id', function(req, res) {
         // next(new Error("Failed to bind post"));
         //   }
     });
+});
+
+
+router.post('/test', function(req, res) {
+    console.log(req.body);
+    res.send(200);
 });
 
 

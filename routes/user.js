@@ -196,37 +196,41 @@ router.post('/addpost', ensureAuthenticated, function(req, res) {
 });
 
 router.get('/editpost/:id', ensureAuthenticated, function(req, res) {
-    Post.findById(req.params.id, function(err, posts) {
-        if (err) {
-            next(err);
-        } else if (posts) {
-            res.render('edit', {
-                posts: posts
-            });
-        }
+    Category.find({}, function(err, categories) {
+        Post.findById(req.params.id, function(err, posts) {
+            if (err) {
+                next(err);
+            } else if (posts) {
+                res.render('edit', {
+                    posts: posts,
+                    categories: categories
+                });
+            }
+        });
     });
 });
 
 router.post('/editpost', ensureAuthenticated, function(req, res) {
-    
+
     Post.findById(req.body.id, function(err, post) {
 
         if (err) return res.send(500, { error: err });
 
-            post.title = req.body.title || post.title;
-            post.state = req.body.state || post.state;
-            post.url = req.body.url || post.url;
-            post.contentbrief = req.body.contentbrief || post.contentBrief;
-            post.contentsummary = req.body.contentsummary || post.contentsummary;
-            post.date = req.body.date || post.date;
-            post.category = req.body.category || post.category;
+        post.title = req.body.title || post.title;
+        post.state = req.body.state || post.state;
+        post.url = req.body.url || post.url;
+        post.contentbrief = req.body.contentbrief || post.contentBrief;
+        post.contentsummary = req.body.contentsummary || post.contentsummary;
+        post.date = req.body.date || post.date;
+        post.category = req.body.category || post.category;
 
         post.save(function(err, post) {
             if (err) return res.send(500, { error: err });
             console.log("Successfully Updated...for real this time.")
-            res.redirect('/post/'+ req.body.id);
+            res.redirect('/post/' + req.body.id);
         });
     });
+
 });
 
 

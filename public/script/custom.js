@@ -1,11 +1,16 @@
 // calender for add post page only
 // 
 // 
-// Prevent all default submit button actions
-//$('form').submit(function(event) {
-//    event.preventDefault(); 
-// });
- 
+
+
+// Hide Messages after 5 seconds
+$(document).ready(function(){
+    
+    $('hbsmessage').hide(1000);
+
+});
+
+
 $('#datepicker input').datepicker({
     maxViewMode: 3,
     todayBtn: true,
@@ -19,13 +24,15 @@ $(document).ready(function() {
     $('#summernote').summernote({
         height: 300,
         minheight: null,
-        focus: true
+        focus: true,
+
     });
 
     $('#summernote2').summernote({
         height: 500,
         minheight: null,
         focus: true
+
     });
 
     $('#dashboardform').hide();

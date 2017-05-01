@@ -3,26 +3,27 @@
         <!-- main body content -->
         <div class="col-md-8 col-md-offset-2" style="background-color: #ffffff; padding:5px; border:1px sold black">
             <div class="text-left">
-            <!-- may have to make custom helper -->
-                <a class="text-muted" href="/blog"><span class="glyphicon glyphicon-arrow-left"></span> back</a> {{#posts}}
-
-                <hr>
+                <!-- may have to make custom helper -->
+                <!-- <a class="text-muted" href="/blog"><span class="glyphicon glyphicon-arrow-left"></span> back</a>-->{{#posts}}
             </div>
-            <div class="media-center">
-                <img class="media-object img-responsive" src="/images/webdevelopment900x300.jpg" alt="900x300">
+            <div class="media-center" id="postpage">
+                <!--<img class="media-object img-responsive" src="/images/webdevelopment900x300.jpg" alt="900x300">-->
                 <br>
-                 <h1><b>{{title}}</b></h1>
-                 {{#if ../user}}<a href="/user/editpost/{{_id}}">  <h4><b>Edit Post</b></h4></a> {{/if}}
-                 <hr>
-                <p class="text-muted" ><small style="float:left; font-size: 12px;">Category: <b>{{category}}</b></small><small style="float: right; font-size: 12px;">Posted on {{dateFormat date "Do MMMM YYYY"}} by James Sandoval</small></p>
+                <h1><b>{{title}}</b></h1> {{#if ../user}}
+                <a href="/user/editpost/{{_id}}">
+                    <h4><b>Edit Post</b></h4></a> {{/if}}
+                <hr>
+                <p class="text-muted"><small style="float:left; font-size: 12px;">Category: <b>{{category}}</b></small><small style="float: right; font-size: 12px;">Posted on {{dateFormat date "Do MMMM YYYY"}} by James Sandoval</small></p>
                 <br>
-               
+                <hr>
                 <div class="text-left">
-                    {{{contentbrief}}}
-                    {{{contentsummary}}}
+                    {{{contentbrief}}} {{{contentsummary}}}
                 </div>
             </div>
-            {{/posts}}
+            {{#if ../user}}
+            <hr>
+            <a href="/user/editpost/{{_id}}">
+                <h4><b>Edit Post</b></h4></a> {{/if}} {{/posts}}
             <!--
             <div class="media">
                 <div class="media-left">
@@ -64,4 +65,8 @@
         </div>
         <div class="col-md-2"></div>
     </div>
+    
 </div>
+<section class="whoami">
+        
+    </section>

@@ -50,19 +50,24 @@
                 </div>
                 <div class="form-group ">
                     <label>Categories:</label>
-                    <select class="form-control input-lg " name="category">
-                        <option>{{category}}</option>
+                    
+                    <select class="form-control input-lg" name="category" id="categoryFormList">
+                    <option>{{category}}</option>
+                    {{#each ../categories}}
+                        <option>{{name}}</option>
+                        {{/each}}
                     </select>
-                    <button type="button " id="newCategory " class="btn btn-xs btn-info " align="right ">Add New Category</button>&nbsp;
-                    <button type="button " id="editCategory " class="btn btn-xs btn-warning " align="right ">Edit Categories</button>
+                    
+                    <button type="button" id="newCategory " class="btn btn-xs btn-info " align="right ">Add New Category</button>&nbsp;
+                    <button type="button" id="editCategory " class="btn btn-xs btn-warning " align="right ">Edit Categories</button>
                     <br>
                     <span id="addNewCategory "></span>
                     <div id='editCategoryBlock'>
                         <table class='table table-striped table-condensed' style="width:100% ">
-                            {{#each categories}}
+                            {{#each ../categories}}
                             <tr>
-                                <td class="hidden ">{{_id}}</td>
-                                <td class="categoryName ">{{name}}</td>
+                                <td class="hidden">{{_id}}</td>
+                                <td class="categoryName">{{name}}</td>
                                 <td>
                                     <button type='button' class='btn btn-info btn-sm' id='modifyCategory'>Edit</button>
                                 </td>

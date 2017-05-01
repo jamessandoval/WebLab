@@ -6,14 +6,20 @@
         <br>
     </div>
     <div class="row">
-        {{#each posts}}
+        <div class="col-md-1">
+        <br>
+            <!--<span class="glyphicon glyphicon-search" style="font-size:.9em; color:#B3B3B3"></span><hr style="padding:0px; margin:0px;">-->
+        </div>
         <!-- main body content -->
-        <div class="col-md-10 col-md-offset-1" style="background-color: #ffffff; padding:20px;">
+        <div class="col-md-10">
+            {{#each posts}}
             <div class="media">
                 <!-- // {{dateFormat now "dddd, MMMM Do YYYY, h:mm:ss a"}} -->
                 <a href="/post/{{_id}}" align="right"><h1 class="media-heading pull-left blog-post-heading"><b>{{title}}</b></h1></a>
+                <br> {{#if ../user}}
                 <br>
-                {{#if ../user}}<a href="/user/editpost/{{_id}}">  <h4><b>Edit Post</b></h4></a> {{/if}}
+                <a href="/user/editpost/{{_id}}">
+                    <h4><b>Edit Post</b></h4></a> {{/if}}
                 <hr>
                 <div style="font-size:13px; padding: 0px; margin:0px; position: relative; top:-10px; display: inline;">
                     <p>Category: <b>{{category}}</b> <span style="float:right; ">{{dateFormat date "dddd, MMMM Do YYYY"}}</span></p>
@@ -23,11 +29,14 @@
                     </div>-->
                 </div>
                 <div class="media-body" style="text-align: left;">
-                     {{{contentbrief}}} <a href="/post/{{_id}}" style="float:left"><h5><b>Read More...</b></h5></a>
+                    {{{contentbrief}}} <a href="/post/{{_id}}" style="float:left"><h5><b>Read More...</b></h5></a>
                 </div>
             </div>
-            <hr> {{/each}}
-           
+
+            {{/each}}
+            <br><br>
+            
         </div>
+        
     </div>
 </div>
