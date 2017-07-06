@@ -1,48 +1,40 @@
 <!-- Home Page Goes here -->
-    <div class="container-fluid ">
-        <div class="row">
-            <!-- main body content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" style="background-color: #ffffff; padding:40px;">
-                <h2 class="section-heading">Binary Search</h2>
-                <p>Binary Search is a well known algorithm which searches for a target value by eliminating approximately one half of a sorted array on each pass until the target value is found. It serves as a great starting point for understanding how some simple tricks can really increase the efficiency of an algorithm.</p>
-                <p>The Running time of binary search is: &Theta;(log n)</p>
-                <pre style="text-align: left; padding: 20px;">
-int binarySearch(const std::vector<T>& list, int start, int end, const t& target){
-
-    if(start > end){
-        return -1;
-    }
-    const int middle = start + ((end - start)/2);
-
-    if(list[middle] == target){
-        return middle;
-    }
-    else if(list[middle] > target){
-        return binarySearch(list, start, middle - 1, target);
-    }
-
-    return binarySearch(list, middle + 1, end, target);
-    
-}
-                    </pre>
-                <p>What was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.</p>
-                <p>A Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That's how I felt seeing the Earth for the first time. I could not help but love and cherish her.</p>
-                <p>For those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us.</p>
-                <h2 class="section-heading">The Final Frontier</h2>
-                <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-                <p>There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-                <blockquote>The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next ten.</blockquote>
-                <p>Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
-                <h2 class="section-heading">Reaching for the Stars</h2>
-                <p>As we got further and further away, it [the Earth] diminished in size. Finally it shrank to the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object looked so fragile, so delicate, that if you touched it with a finger it would crumble and fall apart. Seeing this has to change a man.</p>
-                <a href="#">
-                    <img class="img-responsive" src="img/post-sample-image.jpg" alt="">
-                </a>
-                <span class="caption text-muted">To go places and do things that have never been done before – that’s what living is all about.</span>
-                <p>Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds, to seek out new life and new civilizations, to boldly go where no man has gone before.</p>
-                <p>As I stand out here in the wonders of the unknown at Hadley, I sort of realize there’s a fundamental truth to our nature, Man must explore, and this is exploration at its greatest.</p>
-                <p>Placeholder text by <a href="http://spaceipsum.com/">Space Ipsum</a>. Photographs by <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>.</p>
-            </div>
-        </div>
-        <!-- row class ends -->
+<div class="container">
+    <div class="jumbotron" style="background-color: #4C4C4C;">
+        <h1 style="color:#FFFFFF">&nbsp;&nbsp;&nbsp;Algorithms</h1>
+        <p class="lead" style="color:#FFFFFF">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An ongoing C++ Project</p>
+        <canvas data-processing-sources="/script/tree.pde" align="center" class="img-responsive"></canvas>
     </div>
+    <div class="row">
+        <div class="col-md-1">
+            <br>
+            <!--<span class="glyphicon glyphicon-search" style="font-size:.9em; color:#B3B3B3"></span><hr style="padding:0px; margin:0px;">-->
+        </div>
+        <!-- main body content -->
+        <div class="col-md-10">
+            {{#each posts}}
+            <div class="media">
+                <!-- // {{dateFormat now "dddd, MMMM Do YYYY, h:mm:ss a"}} -->
+                <a href="/post/{{_id}}" align="right"><h1 class="media-heading pull-left blog-post-heading"><b>{{title}}</b></h1></a>
+                <br> {{#if ../user}}
+                <br>
+                <a href="/user/editpost/{{_id}}">
+                    <h4><b>Edit Post</b></h4></a> {{/if}}
+                <hr>
+                <div style="font-size:13px; padding: 0px; margin:0px; position: relative; top:-10px; display: inline;">
+                    <p>Category: <b>{{category}}</b> <span style="float:right; ">{{dateFormat date "dddd, MMMM Do YYYY"}}</span></p>
+                </div>
+                <div class="media-left">
+                    <!--<img class="media-object" src="https://placehold.it/100x100" alt="150x150"></a>
+                    </div>-->
+                </div>
+                <div class="media-body" style="text-align: left;">
+                    {{{contentbrief}}} <a href="/post/{{_id}}" style="float:left"><h5><b>Read More...</b></h5></a>
+                </div>
+            </div>
+            {{/each}}
+            <br>
+            <br>
+        </div>
+    </div>
+</div>

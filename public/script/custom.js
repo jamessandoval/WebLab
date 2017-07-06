@@ -1,14 +1,18 @@
 // calender for add post page only
-// 
-// 
 
 
-// Hide Messages after 5 seconds
-$(document).ready(function(){
-    
-    $('hbsmessage').hide(1000);
 
+
+
+// Dom effects
+$(document).ready(function() {
+
+    $('.alert').hide(2000);
+    $('header').fadeTo(1000, 1);
+    $('.jumbotron').fadeTo(2000, 1);
+    $('#blogheading').fadeTo(1000, 1);
 });
+
 
 
 $('#datepicker input').datepicker({

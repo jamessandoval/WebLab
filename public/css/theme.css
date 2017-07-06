@@ -60,19 +60,45 @@ html {
     /* border-bottom:2px solid #E6E6E6; */
 }
 
+
+
+.alert{
+    position: relative;
+    z-index:100;
+    text-align: center
+}
+
 header {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
     background-position: center;
-    background-image: url("../images/seattleflyby.jpg");
+    background-image: url("../images/seattleflyby.jpg") ;
     min-height: 100%;
-    top: -35px;
+    top: -70px;
     position: relative;
     color: #FF6666;
+    background-color: #333333;
+    opacity: 0;
     /*text-shadow: 2px 2px #333333; */
 }
+
+#photo-credit{
+    position: absolute;
+    bottom:0px;
+    padding-right: 1em;
+    width: 100%;
+    color:#ffffff;
+    font-size:.7em;
+}
+
+#photo-credit mark {
+    background-color: #4C4C4C;
+    opacity: .7;
+    color:#ffffff;
+}
+
 
 header .header-content {
     padding: 110px;
@@ -210,9 +236,24 @@ section {
     box-shadow: rgba(0, 0, 0, 0.8) 5px 5px 55px inset;
 }
 
+.social:hover {
+    -moz-box-shadow: #E6E6E6 5px 5px 55px inset;
+    -webkit-box-shadow: #E6E6E6 5px 5px 55px inset;
+    box-shadow: #E6E6E6 5px 5px 55px inset;
+     -webkit-border-radius: 50%;
+     -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+
+
+}
+
 .column {
-    width: 60%;
-    height: 60%;
+    width: 80%;
+    height: 80%
 }
 
 #cfooter {
@@ -244,6 +285,7 @@ section {
     -o-background-size: cover;
     background-position: center;
     background-image: url("../images/blogheading.jpg");
+    opacity: 0;
 }
 
 .blog-post-heading a:hover a:focus {
@@ -279,3 +321,12 @@ section {
     width: 50%;
     word-wrap: break-word;
 }
+
+/* Algorithms Page */
+
+.jumbotron {
+    opacity: 0;
+}
+
+
+

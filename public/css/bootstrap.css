@@ -1097,9 +1097,15 @@ body {
   font-family: 'Bitter', serif;
   font-family: 'Muli', sans-serif;
   font-size: 18px;
-  line-height: 1.7em;
+  line-height: 1.8em;
   color: #333333;
   background-color: #ffffff;
+}
+
+p {
+  
+  padding-bottom: 1.0em;
+
 }
 input,
 button,

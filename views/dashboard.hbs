@@ -1,10 +1,13 @@
 <!-- Home Page Goes here -->
 <div id="container">
     <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
-            <h1 id="dashboardHead"> <span class="glyphicon glyphicon-picture"></span> Links</h1>
-            <hr>
+    <div class="col-md-2"></div>
+        <div class="col-md-3"><h1> <span class="glyphicon glyphicon-tent"></span>Expiremental</h1>
+        <p><a href="/indeedapi">Indeed APi</a></p>
+        </div>
+        <div class="col-md-3">
+            <h1 id="dashboardHead"> <span class="glyphicon glyphicon-picture"></span>Link Builder</h1>
+            
             <button type="button" id="showLinkForm" class="btn btn-success btn-sm">show link form</button>
             <button type="button" id="hideLinkForm" class="btn btn-info btn-sm">Hide it</button>
             <form id="dashboardform">
@@ -66,6 +69,7 @@
         </div>
     </div>
     {{#eachobj categories links}} {{/eachobj}}
+    <hr>
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-2">

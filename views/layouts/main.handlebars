@@ -18,8 +18,8 @@
 </head>
 
 <body>
-    <!-- Fixed navbar -->
-    <nav class="navbar navbar-inverse navbar-static-top">
+    {{#if user}}
+    <nav class="navbar navbar-inverse navbar-static-top" id="userNavigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -70,6 +70,15 @@
             <!--/.nav-collapse -->
         </div>
     </nav>
+    {{else}}
+    <nav class="navbar navbar navbar-static-top" style="margin-left:85%; opacity: .1">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="/user/login" >Login</a>
+            </div>
+        </div>
+    </nav>
+    {{/if}}
     <div class="row">
         <div class="col-lg-12">
             {{#if success_msg}}
@@ -87,10 +96,12 @@
             <div class="row">
                 <div class="col-sm-12" align="center">
                     <br>
-                    <br><br><br>
+                    <br>
+                    <br>
+                    <br>
                     <h4 style="color:#F9F7F7">&copy; James Sandoval 2017</h4>
                     <br>
-                    <img src="/images/SocialMediaLogos_bw_01.png" alt="1" height="75px" width="75px"><img src="/images/SocialMediaLogos_bw_02.png" alt="1" height="75px" width="75px"><img src="/images/SocialMediaLogos_bw_02.png" alt="1" height="75px" width="75px"><img src="/images/SocialMediaLogos_bw_03.png" alt="1" height="75px" width="75px"><img src="/images/SocialMediaLogos_bw_04.png" alt="1" height="75px" width="75px">
+                    <img src="/images/SocialMediaLogos_bw_01.png" alt="1" height="75px" width="75px" id="socialbutton1" class="social"><img src="/images/SocialMediaLogos_bw_02.png" alt="1" height="75px" width="75px"  id="socialbutton2" class="social"><img src="/images/SocialMediaLogos_bw_02.png" alt="1" height="75px" width="75px"  id="socialbutton3" class="social"><img src="/images/SocialMediaLogos_bw_03.png" alt="1" height="75px" width="75px"  id="socialbutton4" class="social"><img src="/images/SocialMediaLogos_bw_04.png" alt="1" height="75px" width="75px" id="socialbutton5" class="social">
                     <br>
                     <br>
                     <br>
@@ -105,6 +116,7 @@
 <script src="/script/bootstrap-datepicker.js" defer="defer"></script>
 <script src="/script/summernote.min.js" defer="defer"></script>
 <script src="/script/custom.js" defer="defer"></script>
+<script src="/script/processing.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="/script/ie10-viewport-bug-workaround.js" defer="defer"></script>
 <!-- include summernote css/js-->

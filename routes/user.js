@@ -49,14 +49,13 @@ router.post('/register', function(req, res) {
         });
 
         req.flash('success_msg', 'You are registered and can now login');
-
         res.redirect('dashboard');
     }
 });
 
 
 router.post('/login',
-    passport.authenticate('local', { successRedirect: '/user/dashboard', failureRedirect: '/user/login', failureFlash: true }),
+    passport.authenticate('local', { successRedirect: '/', failureRedirect: '/user/login', failureFlash: true }),
     function(req, res) {
         res.redirect('/');
     });
@@ -76,7 +75,6 @@ router.get('/logout', function(req, res) {
     req.logout();
 
     req.flash('success_msg', 'You are logged out');
-
     res.redirect('/');
 });
 
@@ -111,9 +109,7 @@ router.post('/addlink', ensureAuthenticated, function(req, res) {
             console.log('should at least render dashboard');
             res.send(link);
             res.sendStatus(200);
-
         });
-
     });
 });
 
@@ -211,6 +207,8 @@ router.get('/editpost/:id', ensureAuthenticated, function(req, res) {
 });
 
 router.post('/editpost', ensureAuthenticated, function(req, res) {
+
+    console.log(req.body.state);
 
     Post.findById(req.body.id, function(err, post) {
 

@@ -10,11 +10,45 @@ router.get('/', function(req, res) {
     res.render('home');
 });
 
+router.get('/indeedapi', function(req, res) {
+    res.render('indeedapi');
+});
+
 router.get('/blog', function(req, res) {
     Category.find({}, function(err, categories) {
         Link.find({}, function(err, links) {
             Post.find({ state: 'Publish' }, function(err, posts) {
                 res.render('blog', {
+                    posts: posts,
+                    categories: categories,
+                    links: links
+                });
+                //console.log(posts);
+            });
+        });
+    });
+});
+
+router.get('/about', function(req, res) {
+    Category.find({}, function(err, categories) {
+        Link.find({}, function(err, links) {
+            Post.find({ title: 'About' }, function(err, posts) {
+                res.render('about', {
+                    posts: posts,
+                    categories: categories,
+                    links: links
+                });
+                console.log(posts);
+            });
+        });
+    });
+});
+
+router.get('/algos', function(req, res) {
+    Category.find({}, function(err, categories) {
+        Link.find({}, function(err, links) {
+            Post.find({ category: 'Algorithms' }, function(err, posts) {
+                res.render('algos', {
                     posts: posts,
                     categories: categories,
                     links: links

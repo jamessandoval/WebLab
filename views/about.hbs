@@ -1,0 +1,34 @@
+<!-- Home Page Goes here -->
+<div class="container container-fixed">
+    <div class="jumbotron" id="blogheading">
+        <h1>Hi...<small style="color:#333333"><b>I'm James!</b></small></h1>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="row">
+        <div class="col-md-9 col-md-offset-1" style="background-color: #ffffff; padding:5px; border:1px sold black">
+            <div class="text-left">
+                <!-- may have to make custom helper -->
+                <!-- <a class="text-muted" href="/blog"><span class="glyphicon glyphicon-arrow-left"></span> back</a>-->{{#posts}}
+            </div>
+            <div class="media-center" id="postpage">
+                <!--<img class="media-object img-responsive" src="/images/webdevelopment900x300.jpg" alt="900x300">-->
+                {{#if ../user}}
+                <a href="/user/editpost/{{_id}}">
+                    <h4><b>Edit Post</b></h4></a> 
+                <hr>
+                {{/if}}
+               
+                <div class="text-left">
+                    {{{contentbrief}}} {{{contentsummary}}}
+                </div>
+            </div>
+            {{#if ../user}}
+            <hr>
+            <a href="/user/editpost/{{_id}}">
+                <h4><b>Edit Post</b></h4></a> {{/if}} {{/posts}}
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
