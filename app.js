@@ -23,6 +23,7 @@ var express = require('express'),
     var exphbs  = require('express-handlebars');
     var hbs  = require('./helpers/helpers.js')(exphbs);
 
+//http://127.0.0.1:8888/rockmongo
 mongoose.connect('mongodb://localhost/loginapp');
 var db = mongoose.connection;
 app.engine('hbs', hbs.engine,exphbs({defaultLayout: 'main'}));
