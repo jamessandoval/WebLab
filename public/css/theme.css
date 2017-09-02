@@ -152,9 +152,6 @@ header .header-content {
     text-align: center;
 }
 
-header h1,
-{}
-
 header hr {
     height: 2px;
     /* border: 0; */
@@ -221,7 +218,7 @@ section {
     background-size: cover;
     -o-background-size: cover;
     background-position: center;
-    background-image: url("/images/seattlesecondary.jpg");
+    background-image: url("../images/seattlesecondary.jpg");
 }
 
 .whoami {
