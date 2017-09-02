@@ -221,7 +221,7 @@ section {
     background-size: cover;
     -o-background-size: cover;
     background-position: center;
-    background-image: url("../images/seattlesecondary.jpg");
+    background-image: url("/images/seattlesecondary.jpg");
 }
 
 .whoami {
