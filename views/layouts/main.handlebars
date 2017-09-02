@@ -18,9 +18,16 @@
 </head>
 
 <body>
-    {{#if user}}
+    <nav class="navbar">
+        <div class="navbar-header-custom">
+            <a href="/"><img src="/images/jslogo1.png" class="nav-logo"></a>
+            <div class="navbar-social pull-right">
+                <a href="https://www.facebook.com/jes90" target="_blank"><img src="/images/SocialMediaLogos_bw_01.png" alt="1" height="40px" width="40px" id="socialbutton1" class="social"></a><a href="https://github.com/jamessandoval"><img src="/images/SocialMediaLogos_bw_03.png" alt="1" height="40px" width="40px" id="socialbutton4" class="social"></a><a href="https://www.linkedin.com/in/james-sandoval-3a758b1b/"><img src="/images/SocialMediaLogos_bw_04.png" alt="1" height="40px" width="40px" id="socialbutton5" class="social"></a>
+            </div>
+        </div>
+    </nav>
     <nav class="navbar navbar-inverse navbar-static-top" id="userNavigation">
-        <div class="container">
+        <div class="nav-container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -28,34 +35,31 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><img src="/images/jslogo1.png" style="padding-left:5px; position: relative; top:-7px;"></a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     <li><a href="/blog">Blog</a></li>
                     {{#if user}}
-                    <li><a href="/user/dashboard">Dashboard</a></li>
                     <li><a href="/user/addpost">Add a Post</a></li>
                     {{/if}}
-                    <li><a href="https://github.com/jamessandoval" target="_blank">Github</a></li>
                     <li><a href="/resume">Resum&egrave;</a></li>
                     {{#unless user}}
-                    <li><a href="/register">register</a></li>
+                    <!--<li><a href="/register">register</a></li>-->
                     {{/unless}}
-                    <li><a href="/algos">algorithms</a></li>
+                    <li><a href="/about">About</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">More
               <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <!--<li><a href="#">Blog</a></li>-->
-                            <li><a href="#">Resources</a></li>
-                            <li><a href="#">Photography</a></li>
+                            <li><a href="/user/dashboard">Resources</a></li>
+                            <!--<li><a href="#">Photography</a></li>-->
                             <li role="separator" class="divider"></li>
                             <li class="dropdown-header">
                                 <h5>Portfolio:</h5></li>
-                            <li><a href="/home">userhome</a></li>
-                            <li><a href="#">Code</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="https://github.com/jamessandoval">Github</a></li>
                             <li><a href="#">Resume</a></li>
                             <li role="separator" class="divider"></li>
                             {{#if user}}
@@ -70,26 +74,25 @@
             <!--/.nav-collapse -->
         </div>
     </nav>
-    {{else}}
-    <nav class="navbar navbar navbar-static-top" style="margin-left:85%; opacity: .1">
-        <div class="container">
-            <div class="navbar-header">
-                <a href="/user/login">Login</a>
-            </div>
-        </div>
-    </nav>
-    {{/if}}
+    {{#if success_msg}}
     <div class="row">
         <div class="col-lg-12">
-            {{#if success_msg}}
             <div class="alert alert-success">{{success_msg}}</div>
-            {{/if}} {{#if error_msg}}
-            <div class="alert alert-danger">{{error_msg}}</div>
-            {{/if}} {{#if error}}
-            <div class="alert alert-danger">{{error}}</div>
-            {{/if}}
         </div>
     </div>
+    {{/if}} {{#if error_msg}}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-danger">{{error_msg}}</div>
+        </div>
+    </div>
+    {{/if}} {{#if error}}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-danger">{{error}}</div>
+        </div>
+    </div>
+    {{/if}}
     {{{body}}}
     <footer id="cfooter">
         <div class="container">

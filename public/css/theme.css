@@ -11,6 +11,50 @@ html {
     /* background-color: #004080; */
 }
 
+.navbar-header-custom{
+    position:relative;
+    top:0px;
+    z-index:5;
+    background-color: #191919;
+    border-bottom:1px dashed #7F7F7F;
+    padding-top:12px;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
+
+.nav-logo {
+    margin-left:2%; 
+}
+
+.nav-container {
+    padding-left: 2%;
+
+}
+
+.navbar-menu {
+     margin-left:10%; 
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px !important;
+    border: 0px solid transparent !important;
+}
+
+.navbar-secondary {
+    background-color: #004080;
+
+}
+
+.navbar-social {
+    display:inline-block;
+    margin-right: 10px;
+    border-left:1px dashed #7F7F7F;
+    width:130px;
+}
+
 .sp-padding {
     padding: 10px;
 }
@@ -23,17 +67,7 @@ html {
     display: none;
 }
 
-.logocontainer {
-    height: 150px;
-    width: 150px;
-    margin-right: auto;
-    margin-left: auto;
-    background: url(/images/newlogomain2.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    position: relative;
-    top: 165px;
-}
+
 
 .theme-dropdown .dropdown-menu {
     position: static;
@@ -170,8 +204,8 @@ section {
 }
 
 .bg-contact {
-    background-color: ##E6E6E6;
-    color: ##4C4C4C;
+    background-color: #E6E6E6;
+    color: #4C4C4C;
     margin: 0 auto;
     width: 100%;
     min-height: 50%;
@@ -204,7 +238,7 @@ section {
 }
 
 .home-portfolio_subheading{
-    color:#E28B42";
+    color:#E28B42;
 }
 
 .project-img-responsive {
@@ -329,4 +363,12 @@ section {
 }
 
 
+/* Resume Page */
+
+
+
+.resume-bg {
+
+    background-color: #525659;
+}
 
