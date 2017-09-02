@@ -209,7 +209,6 @@ section {
 }
 
 .bg-intro {
-    background-color: #FFFFFF;
     margin: 0 auto;
     width: 100%;
     min-height: 50%;
@@ -218,7 +217,7 @@ section {
     background-size: cover;
     -o-background-size: cover;
     background-position: center;
-    background-image: url("../images/seattlesecondary.jpg");
+    background-image: url("../images/seattlecartoon.jpg");
 }
 
 .whoami {
