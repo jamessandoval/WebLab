@@ -40,9 +40,6 @@
                 <ul class="nav navbar-nav">
                     <li><a href="/">Home</a></li>
                     <li><a href="/blog">Blog</a></li>
-                    {{#if user}}
-                    <li><a href="/user/addpost">Add a Post</a></li>
-                    {{/if}}
                     <li><a href="/resume">Resum&egrave;</a></li>
                     {{#unless user}}
                     <!--<li><a href="/register">register</a></li>-->
@@ -71,6 +68,17 @@
                     </li>
                 </ul>
             </div>
+            {{#if user}}
+            <div class="navbar-collapse collapse nav-user">
+                <ul class="nav navbar-nav">
+                    {{#if user}}
+                    <li><a href="/user/addpost">Add a Post</a></li>
+                    <li><a href="/user/dashboard">Dashboard</a></li>
+                    <li><a href="/user/logout">Logout</a></li>
+                    {{/if}}  
+                </ul>
+            </div>
+            {{/if}}
             <!--/.nav-collapse -->
         </div>
     </nav>
@@ -92,8 +100,7 @@
             <div class="alert alert-danger">{{error}}</div>
         </div>
     </div>
-    {{/if}}
-    {{{body}}}
+    {{/if}} {{{body}}}
     <footer id="cfooter">
         <div class="container">
             <div class="row">
@@ -122,6 +129,7 @@
 <script src="/script/processing.min.js"></script>
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="/script/ie10-viewport-bug-workaround.js" defer="defer"></script>
+<script src="/script/analytics.js" defer="defer"></script>
 <!-- include summernote css/js-->
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 

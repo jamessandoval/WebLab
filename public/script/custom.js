@@ -1,9 +1,6 @@
 // calender for add post page only
 
 
-
-
-
 // Dom effects
 $(document).ready(function() {
 

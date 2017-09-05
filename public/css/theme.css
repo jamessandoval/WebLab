@@ -5,35 +5,35 @@ html {
 }
 
 
+
 /*navbar background override */
 
 .navbar {
     /* background-color: #004080; */
 }
 
-.navbar-header-custom{
-    position:relative;
-    top:0px;
-    z-index:5;
+.navbar-header-custom {
+    position: relative;
+    top: 0px;
+    z-index: 5;
     background-color: #191919;
-    border-bottom:1px dashed #7F7F7F;
-    padding-top:12px;
+    border-bottom: 1px dashed #7F7F7F;
+    padding-top: 12px;
     margin-left: auto;
     margin-right: auto;
-    width:100%;
+    width: 100%;
 }
 
 .nav-logo {
-    margin-left:2%; 
+    margin-left: 2%;
 }
 
 .nav-container {
     padding-left: 2%;
-
 }
 
 .navbar-menu {
-     margin-left:10%; 
+    margin-left: 10%;
 }
 
 .navbar {
@@ -45,14 +45,13 @@ html {
 
 .navbar-secondary {
     background-color: #004080;
-
 }
 
 .navbar-social {
-    display:inline-block;
+    display: inline-block;
     margin-right: 10px;
-    border-left:1px dashed #7F7F7F;
-    width:130px;
+    border-left: 1px dashed #7F7F7F;
+    width: 130px;
 }
 
 .sp-padding {
@@ -75,7 +74,7 @@ html {
     margin-bottom: 20px;
 }
 
-.theme-showcase > p > .btn {
+.theme-showcase>p>.btn {
     margin: 5px 0;
 }
 
@@ -94,11 +93,19 @@ html {
     /* border-bottom:2px solid #E6E6E6; */
 }
 
+.nav-user {
+    position: fixed;
+    top:0px;
+    left:50%;
+    background-color:#191919;
+    opacity: .5;
+
+}
 
 
-.alert{
+.alert {
     position: relative;
-    z-index:100;
+    z-index: 100;
     text-align: center
 }
 
@@ -108,7 +115,7 @@ header {
     background-size: cover;
     -o-background-size: cover;
     background-position: center;
-    background-image: url("../images/seattleflyby.jpg") ;
+    background-image: url("../images/seattleflyby.jpg");
     min-height: 100%;
     top: -70px;
     position: relative;
@@ -118,19 +125,19 @@ header {
     /*text-shadow: 2px 2px #333333; */
 }
 
-#photo-credit{
+#photo-credit {
     position: absolute;
-    bottom:0px;
+    bottom: 0px;
     padding-right: 1em;
     width: 100%;
-    color:#ffffff;
-    font-size:.7em;
+    color: #ffffff;
+    font-size: .7em;
 }
 
 #photo-credit mark {
     background-color: #4C4C4C;
     opacity: .7;
-    color:#ffffff;
+    color: #ffffff;
 }
 
 
@@ -189,15 +196,16 @@ section {
     width: 100%;
     min-height: 50%;
     border-top: 2px solid #666666;
+
 }
 
 .bg-portfolio {
     position: relative;
-    background-color:#004080;
+    background-color: #004080;
     margin: 0 auto;
     width: 100%;
     min-height: 100%;
-    z-index:-2;
+    z-index: -2;
 }
 
 .bg-contact {
@@ -230,11 +238,11 @@ section {
 }
 
 .home-portfolio_heading {
-    color:#ffffff;
+    color: #ffffff;
 }
 
-.home-portfolio_subheading{
-    color:#E28B42;
+.home-portfolio_subheading {
+    color: #E28B42;
 }
 
 .project-img-responsive {
@@ -270,15 +278,13 @@ section {
     -moz-box-shadow: #E6E6E6 5px 5px 55px inset;
     -webkit-box-shadow: #E6E6E6 5px 5px 55px inset;
     box-shadow: #E6E6E6 5px 5px 55px inset;
-     -webkit-border-radius: 50%;
-     -webkit-transition: box-shadow 0.2s ease-in;
+    -webkit-border-radius: 50%;
+    -webkit-transition: box-shadow 0.2s ease-in;
     -moz-transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in;
     -moz-border-radius: 50%;
     border-radius: 50%;
     cursor: pointer;
-
-
 }
 
 .column {
@@ -352,6 +358,7 @@ section {
     word-wrap: break-word;
 }
 
+
 /* Algorithms Page */
 
 .jumbotron {
@@ -359,12 +366,10 @@ section {
 }
 
 
+
 /* Resume Page */
-
-
 
 .resume-bg {
 
     background-color: #525659;
 }
-
