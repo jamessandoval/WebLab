@@ -51,7 +51,7 @@ html {
     display: inline-block;
     margin-right: 10px;
     border-left: 1px dashed #7F7F7F;
-    width: 130px;
+    width: 150px;
 }
 
 .sp-padding {
@@ -285,6 +285,7 @@ section {
     -moz-border-radius: 50%;
     border-radius: 50%;
     cursor: pointer;
+
 }
 
 .column {

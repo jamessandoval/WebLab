@@ -1,0 +1,89 @@
+<!-- Home Page Goes here -->
+<div id="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" data-tabs="tabs">
+                <li class="active"><a href="#links" data-toggle="tab" class="data-toggle-tab">Links</a></li>
+                <li><a href="#posts" data-toggle="tab" class="data-toggle-tab">Posts</a></li>
+                <li><a href="#categories" data-toggle="tab" class="data-toggle-tab">Categories</a></li>
+                <li><a href="#users" data-toggle="tab" class="data-toggle-tab">Users</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="links">
+                    <table class="table" style="border:1px solid black">
+                        {{#each links}}
+                        <tr class="{{id}}">
+                            <td>{{linkname}}</td>
+                            <td><a href="{{url}}" target="_blank">Link</a></td>
+                            <td><img src="{{imgsrc}}" height="50" width="50"></td>
+                            <td>{{category}} </td>
+                            <td>
+                                <button class="button">Edit</button>
+                            </td>
+                            <td>
+                                <button class="button remove">Delete</button>
+                            </td>
+                            <td></td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="posts">
+                    <table class="table" style="border:1px solid black">
+                        {{#each posts}}
+                        <tr class="{{id}}">
+                            <td>{{title}}</td>
+                            <td><a href="{{url}}" target="_blank">Link</a></td>
+                            <td>{{state}}</td>
+                            <td>{{category}} </td>
+                            <td>
+                                <button class="button">Edit</button>
+                            </td>
+                            <td>
+                                <button class="button remove">Delete</button>
+                            </td>
+                            <td></td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="categories">
+                    <table class="table" style="border:1px solid black">
+                        {{#each categories}}
+                        <tr class="{{id}}">
+                            <td>{{name}}</td>
+                            <td>
+                                <button class="button">Edit</button>
+                            </td>
+                            <td>
+                                <button class="button remove">Delete</button>
+                            </td>
+                            <td></td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+                <div class="tab-pane fade" id="users">
+                    <table class="table" style="border:1px solid black">
+                        {{#each users}}
+                        <tr class="{{id}}">
+                            <td>{{name}}</td>
+                            <td>
+                                <button class="button">Edit</button>
+                            </td>
+                            <td>
+                                <button class="button remove">Delete</button>
+                            </td>
+                            <td></td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+            </div>
+            {{#each categories}} {{/each}}
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

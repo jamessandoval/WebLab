@@ -7,6 +7,7 @@ var User = require('../models/user');
 var Category = require('../models/category');
 var Link = require('../models/link');
 var Post = require('../models/post');
+var ObjectID = require('mongodb').ObjectID;
 
 router.get('/login', function(req, res) {
     res.render('login');
@@ -69,6 +70,23 @@ router.get('/dashboard', ensureAuthenticated, function(req, res) {
             });
         })
     });
+});
+
+router.get('/controlpanel', ensureAuthenticated, function(req, res) {
+    User.find({}, function(err, users) {
+        Post.find({}, function(err, posts) {
+            Category.find({}, function(err, categories) {
+                Link.find({}, function(err, links) {
+                    res.render('controlpanel', {
+                        users: users,
+                        categories: categories,
+                        links: links,
+                        posts: posts
+                    });
+                })
+            });
+        })
+    })
 });
 
 router.get('/logout', function(req, res) {
@@ -157,6 +175,55 @@ router.put('/deletecategory', ensureAuthenticated, function(req, res) {
             res.send(200);
         });
     });
+});
+
+router.put('/deletelink', ensureAuthenticated, function(req, res) {
+    Link.findById(req.body.id, function(err, category) {
+        if (err) return res.send(500, { error: err });
+        link.remove(function(err, category) {
+            console.log("removed it.");
+            if (err) return res.send(500, { error: err });
+            console.log("Link Successfully Deleted. Thanks for playing.")
+            res.sendStatus(200);
+            res.redirect('/');
+        });
+    });
+});
+
+router.delete('/delete', ensureAuthenticated, function(req, res) {
+    // 59c504aca0cb0430f5613506
+    value = req.body.text;
+    id = req.body.id;
+
+    if (value === "Links") {
+
+        Link.remove({ "_id": ObjectID(id) }, function(err, link) {
+            if (err) return res.send(500, { error: err });
+            res.sendStatus(200);
+        });
+    }
+
+    if (value === "Posts") {
+        console.log("posts clicked");
+        Post.remove({ "_id": ObjectID(id) }, function(err, post) {
+            if (err) return res.send(500, { error: err });
+            res.sendStatus(200);
+        });
+    }
+
+    if (value === "Categories") {
+        Category.remove({ "_id": ObjectID(id) }, function(err, category) {
+            if (err) return res.send(500, { error: err });
+            res.sendStatus(200);
+        });
+    }
+
+    if (value === "Users") {
+        User.remove({ "_id": ObjectID(id) }, function(err, user) {
+            if (err) return res.send(500, { error: err });
+            res.sendStatus(200);
+        });
+    }
 });
 
 

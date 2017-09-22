@@ -1,6 +1,6 @@
 // calender for add post page only
 
-
+// Control Panel 
 // Dom effects
 $(document).ready(function() {
 
@@ -8,8 +8,22 @@ $(document).ready(function() {
     $('header').fadeTo(1000, 1);
     $('.jumbotron').fadeTo(2000, 1);
     $('#blogheading').fadeTo(1000, 1);
-});
 
+    $('#summernote').summernote({
+        height: 300,
+        minheight: null,
+        focus: true,
+    });
+
+    $('#summernote2').summernote({
+        height: 500,
+        minheight: null,
+        focus: true
+    });
+
+    $('#dashboardform').hide();
+
+});
 
 
 $('#datepicker input').datepicker({
@@ -20,28 +34,7 @@ $('#datepicker input').datepicker({
     todayHighlight: true
 });
 
-// for the wysiwig editor
-$(document).ready(function() {
-    $('#summernote').summernote({
-        height: 300,
-        minheight: null,
-        focus: true,
-
-    });
-
-    $('#summernote2').summernote({
-        height: 500,
-        minheight: null,
-        focus: true
-
-    });
-
-    $('#dashboardform').hide();
-
-});
-
 function slugify(text) {
-
     return text.toString().toLowerCase()
         .replace(/\s+/g, '-') // Replace spaces with -
         .replace(/[^\w\-]+/g, '') // Remove all non-word chars
@@ -50,30 +43,32 @@ function slugify(text) {
         .replace(/-+$/, ''); // Trim - from end of text
 }
 
+
 // smooth scrolling function when the link is in the web page
 $(function() {
     $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            if (target.length) {
-                $('html, body').animate({
-                    scrollTop: target.offset().top
-                }, 1000);
-                return false;
+        if (!$(this).hasClass("data-toggle-tab")) {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
             }
         }
     });
 });
 
-$('#showLinkForm').click(function() {
 
+$('#showLinkForm').click(function() {
     $('#dashboardform').show();
 
 });
 
 $('#hideLinkForm').click(function() {
-
     $('#dashboardform').hide();
 
 });
@@ -332,4 +327,81 @@ $('form').on('click', '#cancelModifyCategory', function() {
 });
 
 
-// Category Ends here
+$('button').on('click', '#removelink', function() {
+    id = $(this).closest('td').prev('td').prev('td').prev('td').text();
+    row = $(this).closest('tr');
+    console.log(id);
+    $.ajax({
+        cache: false,
+        timeout: 0,
+        url: "/user/deletelink",
+        type: "PUT",
+        data: { id: id },
+        success: function(response) {
+
+            console.log("something happened.");
+
+            //$(row).remove();
+            //$('#' + id).remove();
+
+        },
+        error: function(jqXHR, exception) {
+            var msg = '';
+            if (jqXHR.status === 0) {
+                msg = 'Not connected.\n Verify Network connection.';
+            } else if (jqXHR.status == 404) {
+                msg = 'Requested page not found. [404]';
+            } else if (jqXHR.status == 500) {
+                msg = 'Internal Server Error [500].';
+            } else if (exception === 'parsererror') {
+                msg = 'Requested JSON parse failed.';
+            } else if (exception === 'timeout') {
+                msg = 'Time out error.';
+            } else if (exception === 'abort') {
+                msg = 'Ajax request aborted.';
+            } else {
+                msg = 'Uncaught Error.\n' + jqXHR.responseText;
+            }
+            console.log(msg);
+        },
+    });
+});
+
+$(".remove").button().click(function() {
+    id = $(this).closest('tr').attr("class");
+    text = $('.active a:first').text();
+    console.log(id);
+    console.log(text);
+
+    $.ajax({
+        cache: false,
+        timeout: 0,
+        url: "/user/delete",
+        type: "delete",
+        data: { id: id,
+        text: text },
+        success: function(response) {
+            console.log("Successful");
+            $("."+id).remove();
+        },
+        error: function(jqXHR, exception) {
+            var msg = '';
+            if (jqXHR.status === 0) {
+                msg = 'Not connected.\n Verify Network connection.';
+            } else if (jqXHR.status == 404) {
+                msg = 'Requested page not found. [404]';
+            } else if (jqXHR.status == 500) {
+                msg = 'Internal Server Error [500].';
+            } else if (exception === 'parsererror') {
+                msg = 'Requested JSON parse failed.';
+            } else if (exception === 'timeout') {
+                msg = 'Time out error.';
+            } else if (exception === 'abort') {
+                msg = 'Ajax request aborted.';
+            } else {
+                msg = 'Uncaught Error.\n' + jqXHR.responseText;
+            }
+            console.log(msg);
+        },
+    });
+})
